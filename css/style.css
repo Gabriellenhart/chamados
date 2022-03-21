@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 228, 228);
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1.5fr 1.2fr 0.1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "card1 card2 card3 card4"
+    "main main main content1"
+    "main main main content2"
+    "footer footer footer footer";
+}
+
+nav {
+    background-color: #0d247c;
+    grid-area: nav;
+    font-family: 'Barlow', sans-serif;
+    box-shadow: 0px 1px 0px rgb(0, 0, 0);
+}
+
+nav ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; }
+  
+li { float: left; }
+  
+li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+  
+li a:hover { background-color: #111; }
+
+main {
+    background-color: rgb(255, 255, 255);
+    grid-area: main;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 2px;
+    padding: 2px;
+}
+
+#sidebar {
+    background-color: aliceblue;
+    grid-area: sidebar;
+}
+
+#content1 {
+    background-color: rgb(255, 255, 255);
+    grid-area: content1;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 1px;
+    padding: 1px;
+}
+
+#content2 {
+    background-color: rgb(255, 255, 255);
+    grid-area: content2;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 1px;
+    padding: 1px;
+}
+
+footer {
+    background-color: #333;
+    grid-area: footer;
+    color: rgba(245, 245, 245, 0.774);
+    font-size: small;
+}
+
+#card_red {
+    background-color: #ff0f30;
+    grid-area: card1;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: x-large;
+    color: whitesmoke;
+    box-shadow: 1px 2px 2px 2px rgb(131, 131, 131);
+}
+
+#card_orange {
+    background-color: #fd9b3f;
+    grid-area: card2;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    font-size: x-large;
+    color: whitesmoke;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px 2px rgb(131, 131, 131);
+}
+
+#card_grey {
+    background-color: #e2bf4c;
+    grid-area: card3;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    font-size: x-large;
+    color: whitesmoke;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px 2px rgb(131, 131, 131);
+}
+
+#card_green {
+    background-color: #199400;
+    grid-area: card4;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    font-size: x-large;
+    color: whitesmoke;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px 2px rgb(131, 131, 131);
+}
+
+
+table {
+    width: 100%;
+    height: auto;
+    font-family: 'Barlow', sans-serif;
+}
+
+table th{
+    background-color: #333;
+    color: rgb(195, 206, 216);
+    height: 30px;
+}
+
+table td{
+    background-color: antiquewhite;
+}
+
+table tr:hover td { background-color:#b6b6b6; }
+
+#codigo {width: 5%;}
+#cliente {width: 15%;}
+#assunto {width: 30%;}
+#localidade {width: 15%;}
+#data {width: 15%;}
+#priooridade {width: 8%;}
+#status {width: 7%;}
+#opcoes {width: 9%;}
+#novo {width: 9%; background-color: #199400;}
+#email {width: 15%;}
+
+
+/*configurações do menu cadastro de chamados*/
+
+.container_chamados {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 0.1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "title_chamados title_chamados title_chamados title_chamados"
+    "main_chamados main_chamados main_chamados main_chamados"
+    "main_chamados main_chamados main_chamados main_chamados"
+    "footer footer footer footer";
+}
+.title_chamados {
+    background-color: rgb(255, 255, 255);
+    grid-area: title_chamados;
+    row-gap: 1px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 2px;    
+}
+
+
+.main_chamados {
+    background-color: rgb(255, 255, 255);
+    grid-area: main_chamados;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 2px;
+    padding: 2px;
+}
+
+
+.container_clientes {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 0.1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 3px;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "title_clientes title_clientes title_clientes title_clientes"
+    "main_clientes main_clientes main_clientes main_clientes"
+    "main_clientes main_clientes main_clientes main_clientes"
+    "footer footer footer footer";
+}
+
+.title_clientes {
+    background-color: rgb(255, 255, 255);
+    grid-area: title_clientes;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin-top: 10px;
+    margin-bottom: 1px;
+    padding: 1px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:large;
+    text-align:start;
+
+}
+.main_clientes {
+    background-color: rgb(255, 255, 255);
+    grid-area: main_clientes;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgb(197, 197, 197);
+    margin: 2px;
+    padding: 2px;
+}
+
+
+
+.table_title {
+    width: 100%;
+    height: auto;
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 0px;
+    row-gap: 1px;
+    column-gap: 1px;
+}
+
+.table_title th{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 30px;
+    font-size: x-large;
+}
