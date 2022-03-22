@@ -18,10 +18,10 @@ require_once "../funcoes/functions.php";
                 <li><a href="lista_chamados.php">Chamados</a></li>
                 <li><a href="lista_clientes.php">Clientes</a></li>
             </ul>
-        </nav>     
+        </nav>
         <main class="main_clientes">
           <span>Lista de clientes</span>
-          <input type="text" placeholder="Pesquisar"></button>
+          <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
           <a href="cadastro_cliente.php"><button>Novo Cliente</button></a>
             <table>
                 <tr>
@@ -35,7 +35,7 @@ require_once "../funcoes/functions.php";
                     <th id="opcoes">Opções</th>
                 </tr>
                 <tr>
-                    <?php echo $listaClientes; ?>
+                    implementar aqui a exibição dos resiltados pesquisados 
                 </tr>
             </table>
         </main>
