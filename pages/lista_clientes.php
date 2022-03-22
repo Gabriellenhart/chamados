@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../funcoes/functions.php";
 ?>
 <!DOCTYPE html>
@@ -18,14 +18,11 @@ require_once "../funcoes/functions.php";
                 <li><a href="lista_chamados.php">Chamados</a></li>
                 <li><a href="lista_clientes.php">Clientes</a></li>
             </ul>
-        </nav> 
-        <div class="title_clientes">
-            <h3>Lista de clientes</h3>
-            <input type="text" placeholder="Pesquisar"></button>
-            <a href="cadastro_cliente.php"><button>Novo Cliente</button></a>
-
-            </div>
+        </nav>     
         <main class="main_clientes">
+          <span>Lista de clientes</span>
+          <input type="text" placeholder="Pesquisar"></button>
+          <a href="cadastro_cliente.php"><button>Novo Cliente</button></a>
             <table>
                 <tr>
                     <th id="codigo">Código</th>

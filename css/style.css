@@ -13,7 +13,7 @@ body{
     grid-template-rows: 0.1fr 0.2fr 1.5fr 1.2fr 0.1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    grid-template-areas: 
+    grid-template-areas:
     "nav nav nav nav"
     "card1 card2 card3 card4"
     "main main main content1"
@@ -29,11 +29,11 @@ nav {
 }
 
 nav ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; }
-  
+
 li { float: left; }
-  
+
 li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
-  
+
 li a:hover { background-color: #111; }
 
 main {
@@ -160,25 +160,15 @@ table tr:hover td { background-color:#b6b6b6; }
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
     grid-column-gap: 10px;
     grid-row-gap: 5px;
-    grid-template-areas: 
+    grid-template-areas:
     "nav nav nav nav"
-    "title_chamados title_chamados title_chamados title_chamados"
     "main_chamados main_chamados main_chamados main_chamados"
     "main_chamados main_chamados main_chamados main_chamados"
     "footer footer footer footer";
 }
-.title_chamados {
-    background-color: rgb(255, 255, 255);
-    grid-area: title_chamados;
-    row-gap: 1px;
-    border-radius: 2px;
-    box-shadow: 1px 1px 1px rgb(197, 197, 197);
-    margin: 2px;    
-}
-
 
 .main_chamados {
     background-color: rgb(255, 255, 255);
@@ -194,30 +184,16 @@ table tr:hover td { background-color:#b6b6b6; }
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
     grid-column-gap: 10px;
     grid-row-gap: 3px;
-    grid-template-areas: 
+    grid-template-areas:
     "nav nav nav nav"
-    "title_clientes title_clientes title_clientes title_clientes"
     "main_clientes main_clientes main_clientes main_clientes"
     "main_clientes main_clientes main_clientes main_clientes"
     "footer footer footer footer";
 }
 
-.title_clientes {
-    background-color: rgb(255, 255, 255);
-    grid-area: title_clientes;
-    border-radius: 2px;
-    box-shadow: 1px 1px 1px rgb(197, 197, 197);
-    margin-top: 10px;
-    margin-bottom: 1px;
-    padding: 1px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:large;
-    text-align:start;
-
-}
 .main_clientes {
     background-color: rgb(255, 255, 255);
     grid-area: main_clientes;
