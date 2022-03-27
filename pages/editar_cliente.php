@@ -1,5 +1,6 @@
 <?php
 require_once "../funcoes/conexao_db.php";
+
 $result = $conexao->query ("SELECT * from clientes
 INNER JOIN cidades on clientes.tbl_cidade = cidades.id_cidade WHERE id_cliente =".$_GET['id_cliente']);
 $dados = $result->fetch_assoc();

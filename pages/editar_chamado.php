@@ -1,9 +1,9 @@
 <?php
 require_once "../funcoes/conexao_db.php";
-$result = $conexao->query("SELECT * FROM chamados 
+
+$result = $conexao->query("SELECT * FROM chamados
 inner join cidades on chamados.localidade = cidades.id_cidade WHERE id_chamado =".$_GET['id_chamado']);
 $dados = $result->fetch_assoc();
-//print_r($result);
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +23,9 @@ $dados = $result->fetch_assoc();
                 <li><a href="lista_chamados.php">Chamados</a></li>
                 <li><a href="cadastro_cliente.php">Clientes</a></li>
             </ul>
-        </nav>  
+        </nav>
         <form class="form_principal" action="../actions/atualiza_chamado.php" method="post">
-                
+
                 <div>
                     <input type="hidden" name="id_chamado" value="<?php echo $dados['id_chamado']; ?>">
                 </div>
@@ -40,7 +40,7 @@ $dados = $result->fetch_assoc();
                 <div class="form_secundario">
                     <label for="">Data de abertura</label>
                     <input type="date" value="<?php echo $dados['data_abertura']; ?>" name="data_abertura">
-                </div>                
+                </div>
                 <div class="form_secundario">
                     <label for="">Prioridade</label>
                     <select value="<?php echo $dados['prioridade']; ?>" name="prioridade" id="">
@@ -71,6 +71,6 @@ $dados = $result->fetch_assoc();
                     <button><a href="./index.php"></a>Cancelar</button>
                 </div>
             </form>
-        <footer>Versão: 1.0.0</footer> 
+        <footer>Versão: 1.0.0</footer>
 </body>
 </html>

@@ -63,8 +63,8 @@
                   <td>$prioridade</td>
                   <td>$status</td>
                   <td>
-                  <a href='editar_chamado.php?id_cliente=". $id_chamado ."'><button>Edita</button></a>
-                    <a href='apaga_chamado.php?id_cliente=". $id_chamado ."'><button>Excluir</button></a>
+                  <a href='editar_chamado.php?id_chamado=". $id_chamado ."'><button>Edita</button></a>
+                    <a href='apaga_chamado.php?id_chamado=". $id_chamado ."'><button>Excluir</button></a>
                   </td>
                   <td>.</td>
               </tr>";
