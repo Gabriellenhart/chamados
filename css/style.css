@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500&family=Roboto&display=swap');
 
 body{
     margin: 0;
@@ -146,7 +147,7 @@ table tr:hover td { background-color:#b6b6b6; }
 #cliente {width: 15%;}
 #assunto {width: 30%;}
 #localidade {width: 15%;}
-#data {width: 15%;}
+#data {width: 10%;}
 #priooridade {width: 8%;}
 #status {width: 7%;}
 #opcoes {width: 9%;}
@@ -205,18 +206,31 @@ table tr:hover td { background-color:#b6b6b6; }
 
 
 
-.table_title {
-    width: 100%;
-    height: auto;
-    font-family: 'Barlow', sans-serif;
-    margin-bottom: 0px;
-    row-gap: 1px;
-    column-gap: 1px;
-}
+.title_bar {
+  display: flex;
+  background-color: grey;
+  width: 100%;
+  height: 40px;
 
-.table_title th{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    height: 30px;
-    font-size: x-large;
+}
+.title_main {
+  flex-direction: column;
+  flex-flow: row;
+  width: 30%;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  padding: 3px;
+
+}
+.search {
+  flex-direction: column;
+  flex-flow: row;
+  width: 60%;
+  align-content: center;
+}
+.add_button {
+  flex-direction: column;
+  flex-flow: row;
+  width: 10%;
+
 }

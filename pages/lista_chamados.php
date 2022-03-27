@@ -22,12 +22,13 @@
             </ul>
         </nav>
         <main class="main_chamados">
-          <span>Lista de chamados</span>
-          <form action="../actions/processaBuscaChamado.php">
-             <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
-          </form>
-          <a href="cadastro_chamado.php"><button>Novo chamado</button></a>
-
+          <div class="title_bar">
+            <span class="title_main">Lista de clientes</span>
+            <form class="search" action="../actions/processaBuscaCliente.php">
+               <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
+            </form>
+            <a class="add_button" href="cadastro_cliente.php"><button>Novo Chamado</button></a>
+          </div>
               <?php
               //include ("../funcoes/conexao_db.php");
 

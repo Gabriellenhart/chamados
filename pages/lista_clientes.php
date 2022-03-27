@@ -25,12 +25,13 @@
          </ul>
       </nav>
       <main class="main_clientes">
-         <span>Lista de clientes</span>
-         <form action="../actions/processaBuscaCliente.php">
-            <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
-         </form>
-         <a href="cadastro_cliente.php"><button>Novo Cliente</button></a>
-
+        <div class="title_bar">
+          <span class="title_main">Lista de clientes</span>
+          <form class="search" action="../actions/processaBuscaCliente.php">
+             <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
+          </form>
+          <a class="add_button" href="cadastro_cliente.php"><button>Novo Cliente</button></a>
+        </div>
             <?php
 
                $sql=$conexao->prepare('SELECT id_cliente, nome_cliente, email, telefone, nome_cidade, estado, endereco from clientes
