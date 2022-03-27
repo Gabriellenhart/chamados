@@ -1,12 +1,13 @@
 <?php
-include('../funcoes/conexao.php');
+include ("../funcoes/conexao_db.php");
 
 $campo="%".$_POST['campo']."%";
 
-$sql=$mysqli->prepare("select * from clientes where nome_cliente like ?");
+$sql=$conexao->prepare("SELECT id_cliente, nome_cliente, email, telefone, nome_cidade, estado, endereco from clientes
+   INNER JOIN cidades on clientes.tbl_cidade = cidades.id_cidade where nome_cliente like ?");
 $sql->bind_param("s",$campo);
 $sql->execute();
-$sql->bind_result($id,$nome_cliente,$email,$email,$telefone,$nome_cidade,$estado,$endereco);
+$sql->bind_result($id,$nome_cliente,$email,$telefone,$nome_cidade,$estado,$endereco);
 
 echo "
     <table>
@@ -36,6 +37,10 @@ echo "
             <td>$nome_cidade</td>;
             <td>$estado</td>
             <td>$endereco</td>
+            <td>
+            <a href='editar_cliente.php?id_cliente=". $id ."'><button>Edita</button></a>
+              <a href='apaga_cliente.php?id_cliente=". $id ."'><button>Excluir</button></a>
+            </td>
         </tr>
         ";
         }
@@ -43,4 +48,5 @@ echo "
         echo "
         </tbody>
     </table>
-"; ?>
+";
+?>

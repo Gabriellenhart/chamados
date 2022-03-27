@@ -6,7 +6,7 @@ $(document).ready(function(){
             var dados = $(this).serialize();
 
             $.ajax({
-                url: 'processa_busca_cliente.php',
+                url: '../actions/processaBuscaChamado.php',
                 method: 'post',
                 dataType: 'html',
                 data: dados,

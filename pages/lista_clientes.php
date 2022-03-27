@@ -1,5 +1,6 @@
 <?php
-   include ("../funcoes/functions.php");
+  include ("../funcoes/conexao_db.php");
+ //  include ("./funcoes/processa.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,10 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="../css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="../funcoes/buscacliente.js"></script>
+
+
       <title>Lista de clientes</title>
    </head>
    <body>
@@ -21,17 +26,20 @@
       </nav>
       <main class="main_clientes">
          <span>Lista de clientes</span>
-         <form action="../action/processa_busca_cliente.php">
+         <form action="../actions/processaBuscaCliente.php">
             <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
          </form>
          <a href="cadastro_cliente.php"><button>Novo Cliente</button></a>
+
             <?php
-               $sql=$conexao->prepare('SELECT id_cliente, nome_cliente, email, telefone, nome_cidade, estado, endereco from clientes INNER JOIN cidades on clientes.tbl_cidade = cidades.id_cidade');
+
+               $sql=$conexao->prepare('SELECT id_cliente, nome_cliente, email, telefone, nome_cidade, estado, endereco from clientes
+                  INNER JOIN cidades on clientes.tbl_cidade = cidades.id_cidade');
                $sql->execute();
                $sql->bind_result($id,$nome_cliente,$email,$telefone,$nome_cidade,$estado,$endereco);
                //print_r($sql);
                echo "
-               <table>
+               <table id='resultado'>
                    <tr>
                        <th id='codigo'>Código</th>
                        <th>Nome</th>
@@ -54,8 +62,8 @@
                <td class='td_estado'>$estado</td>
                <td class='td_endereco'>$endereco</td>
                <td>
-                 <a href='editar_cliente.php?id_cliente='$id'><button>Editar</button></a>
-                 <a href='apaga_cliente.php?id_cliente='$id'><button>Excluir</button></a>
+               <a href='editar_cliente.php?id_cliente=". $id ."'><button>Edita</button></a>
+                 <a href='apaga_cliente.php?id_cliente=". $id ."'><button>Excluir</button></a>
                </td>
                </tr>";
                }
