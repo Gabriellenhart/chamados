@@ -1,5 +1,9 @@
-<?php 
+<?php
+
+include './funcoes/conexao_db.php';
 require_once "./funcoes/functions.php";
+
+verificaSessao();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +21,7 @@ require_once "./funcoes/functions.php";
                 <li><a href="">Dashboard</a></li>
                 <li><a href="./pages/lista_chamados.php">Chamados</a></li>
                 <li><a href="./pages/lista_clientes.php">Clientes</a></li>
+                <li id="logout"><a href="./pages/logout.php">Logout</a></li>
             </ul>
         </nav>
         <?php echo $statusChamados ?>

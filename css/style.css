@@ -37,6 +37,7 @@ li a { display: block; color: white; text-align: center; padding: 14px 16px; tex
 
 li a:hover { background-color: #111; }
 
+#logout { display: block; float:right; }
 main {
     background-color: rgb(255, 255, 255);
     grid-area: main;
@@ -232,5 +233,21 @@ table tr:hover td { background-color:#b6b6b6; }
   flex-direction: column;
   flex-flow: row;
   width: 10%;
+}
 
+.tela_login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 20%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+}
+
+.tela_login input {
+  font-size: 20px
 }

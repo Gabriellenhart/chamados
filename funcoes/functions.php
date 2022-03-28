@@ -5,7 +5,7 @@ require_once "conexao_db.php";
 $sql = $conexao->query("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
 INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente
 INNER JOIN cidades ON clientes.tbl_cidade = cidades.id_cidade ");
- 
+
 $listaChamados = '';
 while($dados = $sql->fetch_assoc()){
   $listaChamados .='<tr>
@@ -13,7 +13,7 @@ while($dados = $sql->fetch_assoc()){
     <td>'.$dados['nome_cliente'].'</td>
     <td>'.$dados['assunto'].'</td>
     <td>'.$dados['nome_cidade'].'</td>
-    <td>'.$dados['data_abertura'].'</td>    
+    <td>'.$dados['data_abertura'].'</td>
     <td>'.$dados['prioridade'].'</td>
     <td>'.$dados['status'].'</td>
     <td>
@@ -60,7 +60,7 @@ while($dados = $sql->fetch_assoc()){
 $sql = $conexao->query("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
 INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente
 INNER JOIN cidades ON clientes.tbl_cidade = cidades.id_cidade ");
- 
+
 $listaMaenuChamados = '';
 while($dados = $sql->fetch_assoc()){
   $listaMaenuChamados .='<tr>
@@ -68,13 +68,13 @@ while($dados = $sql->fetch_assoc()){
     <td>'.$dados['nome_cliente'].'</td>
     <td>'.$dados['assunto'].'</td>
     <td>'.$dados['nome_cidade'].'</td>
-    <td>'.$dados['data_abertura'].'</td>    
+    <td>'.$dados['data_abertura'].'</td>
     <td>'.$dados['prioridade'].'</td>
     <td>'.$dados['status'].'</td>
     <td>
       <a href="editar_chamado.php?id_chamado='.$dados['id_chamado'].'"><button>Editar</button></a>
       <a href="apaga_chamado.php?id_chamado='.$dados['id_chamado'].'"><button>Excluir</button></a>
-    </td> 
+    </td>
     <td>.</td>
   </tr>';
 }
@@ -107,6 +107,13 @@ while($dados = $sql->fetch_assoc()){
  </tr>';
 }
 
+function verificaSessao() {
+  if($_SESSION['usuario_logado'] == ''){
+    header('location:./pages/login.php');
+  }
+}
+
+function usuarioLogado(){
+  $user = $_SESSION['usuario_logado'];
+}
 ?>
-
-

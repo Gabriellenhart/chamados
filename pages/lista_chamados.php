@@ -27,7 +27,7 @@
             <form class="search" action="../actions/processaBuscaCliente.php">
                <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
             </form>
-            <a class="add_button" href="cadastro_cliente.php"><button>Novo Chamado</button></a>
+            <a class="add_button" href="cadastro_chamado.php"><button>Novo Chamado</button></a>
           </div>
               <?php
               //include ("../funcoes/conexao_db.php");
