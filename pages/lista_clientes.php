@@ -1,6 +1,8 @@
 <?php
-  include ("../funcoes/conexao_db.php");
- //  include ("./funcoes/processa.php");
+  include "../funcoes/conexao_db.php";
+  include "../funcoes/functions.php";
+
+ verificaSessao();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +24,7 @@
             <li><a href="../index.php">Dashboard</a></li>
             <li><a href="lista_chamados.php">Chamados</a></li>
             <li><a href="lista_clientes.php">Clientes</a></li>
+            <li id="logout"><a href="../pages/logout.php">Logout</a></li>
          </ul>
       </nav>
       <main class="main_clientes">

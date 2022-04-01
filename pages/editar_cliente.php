@@ -1,5 +1,8 @@
 <?php
 require_once "../funcoes/conexao_db.php";
+include "../funcoes/functions.php";
+
+verificaSessao();
 
 $result = $conexao->query ("SELECT * from clientes
 INNER JOIN cidades on clientes.tbl_cidade = cidades.id_cidade WHERE id_cliente =".$_GET['id_cliente']);
@@ -19,8 +22,9 @@ $dados = $result->fetch_assoc();
         <nav>
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="lista_chamados.php">Chamados</a></li>
-                <li><a href="cadastro_cliente.php">Clientes</a></li>
+                <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+                <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+                <li id="logout"><a href="../pages/logout.php">Logout</a></li>
             </ul>
         </nav>
         <form action="../actions/atualiza_cliente.php" method="post">

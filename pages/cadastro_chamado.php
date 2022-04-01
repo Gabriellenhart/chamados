@@ -1,3 +1,8 @@
+<?php
+  include "../funcoes/functions.php";
+
+ verificaSessao();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +14,15 @@
 </head>
 <body>
 <div class="container_chamados">
-        <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="lista_chamados.php">Chamados</a></li>
-                <li><a href="lista_clientes.php">Clientes</a></li>
-            </ul>
-        </nav>  
+  <div class="container">
+      <nav>
+          <ul>
+              <li><a href="../index.php">Dashboard</a></li>
+              <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+              <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+              <li id="logout"><a href="../pages/logout.php">Logout</a></li>
+          </ul>
+      </nav>
     <form action="../actions/cria_chamado.php" method="POST">
     <div class="">
                     <label for="">Cliente</label>
@@ -28,7 +35,7 @@
                 <div class="">
                     <label for="">Data de abertura</label>
                     <input type="date" name="data_abertura" id="">
-                </div>                
+                </div>
                 <div class="">
                     <label for="">Prioridade</label>
                     <select name="prioridade" id="">

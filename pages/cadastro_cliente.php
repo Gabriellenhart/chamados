@@ -1,3 +1,8 @@
+<?php
+include "../funcoes/functions.php";
+
+verificaSessao();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +24,13 @@
 </head>
 <body>
 <div class="container_clientes">
+  <div class="container">
         <nav>
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="lista_chamados.php">Chamados</a></li>
-                <li><a href="cadastro_cliente.php">Clientes</a></li>
+                <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+                <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+                <li id="logout"><a href="../pages/logout.php">Logout</a></li>
             </ul>
         </nav>
         <div class="title_clientes">

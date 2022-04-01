@@ -16,14 +16,15 @@ $dados = $result->fetch_assoc();
     <title>Editar Chamado</title>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="lista_chamados.php">Chamados</a></li>
-                <li><a href="cadastro_cliente.php">Clientes</a></li>
-            </ul>
-        </nav>
+      <div class="container">
+          <nav>
+              <ul>
+                  <li><a href="">Dashboard</a></li>
+                  <li><a href="./pages/lista_chamados.php">Chamados</a></li>
+                  <li><a href="./pages/lista_clientes.php">Clientes</a></li>
+                  <li id="logout"><a href="./pages/logout.php">Logout</a></li>
+              </ul>
+          </nav>
         <form class="form_principal" action="../actions/atualiza_chamado.php" method="post">
 
                 <div>
