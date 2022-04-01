@@ -1,5 +1,8 @@
 <?php
 require_once "../funcoes/conexao_db.php";
+include "../funcoes/functions.php";
+
+verificaSessao();
 
 $result = $conexao->query("SELECT * FROM chamados
 inner join cidades on chamados.localidade = cidades.id_cidade WHERE id_chamado =".$_GET['id_chamado']);
@@ -19,10 +22,10 @@ $dados = $result->fetch_assoc();
       <div class="container">
           <nav>
               <ul>
-                  <li><a href="">Dashboard</a></li>
-                  <li><a href="./pages/lista_chamados.php">Chamados</a></li>
-                  <li><a href="./pages/lista_clientes.php">Clientes</a></li>
-                  <li id="logout"><a href="./pages/logout.php">Logout</a></li>
+                  <li><a href="../index.php">Dashboard</a></li>
+                  <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+                  <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+                  <li id="logout"><a href="../pages/logout.php">Logout</a></li>
               </ul>
           </nav>
         <form class="form_principal" action="../actions/atualiza_chamado.php" method="post">
