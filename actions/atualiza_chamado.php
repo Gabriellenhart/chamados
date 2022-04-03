@@ -3,8 +3,8 @@
 require_once "../funcoes/conexao_db.php";
   print_r($_POST);
 
-$sql = $conexao->query("UPDATE chamados SET 
-tbl_cliente = '".$_POST['cliente']."',
+$sql = $conexao->query("UPDATE chamados SET
+tbl_cliente = (SELECT id_cliente FROM clientes WHERE nome_cliente LIKE '".$_POST['cliente']."'),
 localidade = '".$_POST['localidade']."',
 data_abertura = '".$_POST['data_abertura']."',
 prioridade = '".$_POST['prioridade']."',

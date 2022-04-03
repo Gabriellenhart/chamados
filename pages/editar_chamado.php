@@ -4,7 +4,7 @@ include "../funcoes/functions.php";
 
 verificaSessao();
 
-$result = $conexao->query("SELECT * FROM chamados
+$result = $conexao->query("SELECT * FROM chamados inner join clientes on chamados.tbl_cliente = clientes.id_cliente
 inner join cidades on chamados.localidade = cidades.id_cidade WHERE id_chamado =".$_GET['id_chamado']);
 $dados = $result->fetch_assoc();
 ?>
@@ -16,6 +16,11 @@ $dados = $result->fetch_assoc();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../funcoes/buscacliente.js"></script>
     <title>Editar Chamado</title>
 </head>
 <body>
@@ -35,7 +40,7 @@ $dados = $result->fetch_assoc();
                 </div>
                 <div class="form_secundario">
                     <label for="">Cliente</label>
-                    <input type="text" value="<?php echo $dados['tbl_cliente']; ?>" name="cliente">
+                    <input id="pesquisa_cliente" type="text" value="<?php echo $dados['nome_cliente']; ?>" name="cliente">
                 </div>
                 <div class="form_secundario">
                     <label for="">Localidade</label>

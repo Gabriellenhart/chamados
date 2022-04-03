@@ -1,6 +1,26 @@
 <?php
 require_once "conexao_db.php";
 
+function pesquisa_cliente($conexao, $term){
+	$query = "SELECT nome_cliente FROM clientes WHERE nome_cliente LIKE '%".$term."%' ORDER BY nome_cliente ASC";
+	$result = mysqli_query($conexao, $query);
+	$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	return $data;
+}
+
+if (isset($_GET['term'])) {
+	$getCliente = pesquisa_cliente($conexao, $_GET['term']);
+	$clienteList = array();
+	foreach($getCliente as $cliente){
+		$clienteList[] = $cliente['nome_cliente'];
+	}
+	echo json_encode($clienteList);
+}
+
+
+
+
+
 //variável $listaChamados, que lista os chamados em uma tabela no arquivo index.php
 $sql = $conexao->query("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
 INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente
@@ -116,4 +136,9 @@ function verificaSessao() {
 function usuarioLogado(){
   $user = $_SESSION['usuario_logado'];
 }
+
+
+
+
+
 ?>

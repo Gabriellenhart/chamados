@@ -22,3 +22,10 @@ $(document).ready(function(){
 
     });
 });
+
+
+$(function() {
+   $( "#pesquisa_cliente" ).autocomplete({
+     source: '../funcoes/functions.php',
+   });
+});
