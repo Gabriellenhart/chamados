@@ -10,6 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../funcoes/buscacliente.js"></script>
+    <script src="../funcoes/busca_cidade.js"></script>
     <title>Cadastro de chamado</title>
 </head>
 <body>
@@ -26,11 +31,11 @@
     <form action="../actions/cria_chamado.php" method="POST">
     <div class="">
                     <label for="">Cliente</label>
-                    <input type="number" name="tbl_cliente" id="">
+                    <input id="pesquisa_cliente" type="text" name="nome_cliente">
                 </div>
                 <div class="">
                     <label for="">Localidade</label>
-                    <input type="text" name="localidade" id="">
+                    <input id="pesquisa_cidade" type="text" name="localidade">
                 </div>
                 <div class="">
                     <label for="">Data de abertura</label>

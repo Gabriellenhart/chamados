@@ -1,8 +1,8 @@
 <?php
-require_once "../funcoes/conexao_db.php";
+include "../funcoes/conexao_db.php";
 include "../funcoes/functions.php";
 
-verificaSessao();
+
 
 $result = $conexao->query("SELECT * FROM chamados inner join clientes on chamados.tbl_cliente = clientes.id_cliente
 inner join cidades on chamados.localidade = cidades.id_cidade WHERE id_chamado =".$_GET['id_chamado']);
@@ -16,11 +16,11 @@ $dados = $result->fetch_assoc();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="../funcoes/buscacliente.js"></script>
+    <script src="../funcoes/busca_cidade.js"></script>
     <title>Editar Chamado</title>
 </head>
 <body>
@@ -33,7 +33,7 @@ $dados = $result->fetch_assoc();
                   <li id="logout"><a href="../pages/logout.php">Logout</a></li>
               </ul>
           </nav>
-        <form class="form_principal" action="../actions/atualiza_chamado.php" method="post">
+        <form class="form_principal" action="./atualiza_chamado.php" method="post">
 
                 <div>
                     <input type="hidden" name="id_chamado" value="<?php echo $dados['id_chamado']; ?>">
@@ -44,7 +44,7 @@ $dados = $result->fetch_assoc();
                 </div>
                 <div class="form_secundario">
                     <label for="">Localidade</label>
-                    <input type="text" value="<?php echo $dados['localidade']; ?>" name="localidade">
+                    <input id="pesquisa_cidade" type="text" value="<?php echo $dados['nome_cidade']; ?>" name="localidade">
                 </div>
                 <div class="form_secundario">
                     <label for="">Data de abertura</label>
@@ -77,7 +77,7 @@ $dados = $result->fetch_assoc();
                 </div>
                 <div>
                 <a><button type="submit">Atualizar</button></a>
-                    <button><a href="./index.php"></a>Cancelar</button>
+                    <button><a href="index.php"></a>Cancelar</button>
                 </div>
             </form>
         <footer>Versão: 1.0.0</footer>

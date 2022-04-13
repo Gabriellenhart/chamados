@@ -10,7 +10,10 @@ verificaSessao();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../funcoes/buscacliente.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../funcoes/busca_cidade.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -43,7 +46,7 @@ verificaSessao();
                 </div>
                 <div  class="form_cliente">
                     <label for="">Cidade</label>
-                    <input type="text" name="tbl_cidade">
+                    <input id="pesquisa_cidade" type="text" name="localidade">
                 </div>
                 <div  class="form_cliente">
                     <label for="">Endereço</label>

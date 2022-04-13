@@ -1,5 +1,5 @@
 <?php
-  include  ("../funcoes/conexao_db.php");
+  include  "../funcoes/conexao_db.php";
   include "../funcoes/functions.php";
 
   verificaSessao();
@@ -27,7 +27,7 @@
         </nav>
         <main class="main_chamados">
           <div class="title_bar">
-            <span class="title_main">Lista de clientes</span>
+            <span class="title_main">Lista de chamados</span>
             <form class="search" action="../actions/processaBuscaCliente.php">
                <input type="text" placeholder="Pesquisar" name="campo" id="campo"></button>
             </form>
@@ -35,15 +35,24 @@
           </div>
               <?php
               //include ("../funcoes/conexao_db.php");
+              $sql=$conexao->query("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
+                INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente INNER JOIN cidades ON chamados.localidade = cidades.id_cidade");
+              $listaChamados = "";
+              while($dados = $sql->fetch_assoc()){
+                $listaChamados .='<tr>
+                  <td>'.$dados['id_chamado'].'</td>
+                  <td>'.$dados['nome_cliente'].'</td>
+                  <td>'.$dados['assunto'].'</td>
+                  <td>'.$dados['nome_cidade'].'</td>
+                  <td>'.$dados['data_abertura'].'</td>
+                  <td>'.$dados['prioridade'].'</td>
+                  <td>'.$dados['status'].'</td>
+                  <td>
+                  <a href="editar_chamado.php?id_chamado=' .$dados['id_chamado']. '"><button>Edita</button></a>
+                  <a href="apaga_chamado.php?id_chamado=' .$dados['id_chamado']. '"><button>Excluir</button></a>
+                  </td>';
+                }?>
 
-              $sql=$conexao->prepare("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
-              INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente
-              INNER JOIN cidades ON clientes.tbl_cidade = cidades.id_cidade");
-              $sql->execute();
-              $sql->bind_result($id_chamado,$nome_cliente,$assunto,$nome_cidade,$data_abertura,$prioridade,$status);
-
-
-              echo "
               <table id='resultado'>
                   <tr>
                       <th id='codigo'>Código</th>
@@ -53,31 +62,15 @@
                       <th id='data'>Data</th>
                       <th id='prioridade'>Prioridade</th>
                       <th id='status'>Status</th>
-                      <th id=opcoes'>Opções</th>
+                      <th id='opcoes'>Opções</th>
                       <th>Comentarios</th>
-                  </tr>";
+                  </tr>
+                  <tr>
+                    <?php echo $listaChamados; ?>
+                  </tr>
 
-              while($sql->fetch()){
-              echo "
-              <tr>
-                  <td>$id_chamado</td>
-                  <td>$nome_cliente</td>
-                  <td>$assunto</td>
-                  <td>$nome_cidade</td>
-                  <td>$data_abertura</td>
-                  <td>$prioridade</td>
-                  <td>$status</td>
-                  <td>
-                  <a href='editar_chamado.php?id_chamado=". $id_chamado ."'><button>Edita</button></a>
-                    <a href='apaga_chamado.php?id_chamado=". $id_chamado ."'><button>Excluir</button></a>
-                  </td>
-                  <td>.</td>
-              </tr>";
-              }
-              echo "
+              </table>
 
-              </table>";
-              ?>
         </main>
         <footer>Versão: 1.0.0</footer>
 </body>
