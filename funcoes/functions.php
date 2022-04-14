@@ -19,8 +19,7 @@ if (isset($_GET['term'])) {
 
 //variável $listaChamados, que lista os chamados em uma tabela no arquivo index.php
 $sql = $conexao->query("SELECT id_chamado, nome_cliente, assunto, nome_cidade, data_abertura, prioridade, status FROM chamados
-INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente
-INNER JOIN cidades ON clientes.tbl_cidade = cidades.id_cidade ");
+	INNER JOIN clientes ON chamados.tbl_cliente = clientes.id_cliente INNER JOIN cidades ON chamados.localidade = cidades.id_cidade");
 
 $listaChamados = '';
 while($dados = $sql->fetch_assoc()){
