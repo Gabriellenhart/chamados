@@ -31,7 +31,7 @@ verificaSessao();
             <h3>Cadastro de cliente</h3>
         </div>
         <main class="main_clientes">
-            <form class="container_form_cliente_" action="../actions/cria_cliente.php" method="POST">
+            <form class="container_form_cliente" action="../actions/cria_cliente.php" method="POST">
                 <div  class="input_nome">
                     <label for="">Nome Cliente</label>
                     <input type="text" name="nome_cliente">
@@ -46,7 +46,7 @@ verificaSessao();
                 </div>
                 <div  class="form_cliente">
                     <label for="">Cidade</label>
-                    <input id="pesquisa_cidade" type="text" name="localidade">
+                    <input id="pesquisa_cidade" type="text" name="tbl_cidade">
                 </div>
                 <div  class="form_cliente">
                     <label for="">Endereço</label>
