@@ -17,6 +17,6 @@ if (!mysqli_query($conexao, "INSERT INTO chamados (tbl_cliente, localidade, assu
 //((SELECT id_cliente FROM clientes WHERE nome_cliente like '".$_POST['nome_cliente']."'), '".$_POST['assunto']."', '".$_POST['descricao']."', (SELECT id_cidade FROM cidades WHERE nome_cidade LIKE '".$_POST['localidade']."'), '".$_POST['data_abertura']."', '".$_POST['prioridade']."', '".$_POST['status']."')");
 
 //print_r($sql);
-//mysqli_close($conexao);
-header("Location: ../pages/lista_chamados.php");
+mysqli_close($conexao);
+//header("Location: ../pages/lista_chamados.php");
 ?>

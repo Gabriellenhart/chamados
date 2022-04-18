@@ -22,44 +22,32 @@ $dados = $result->fetch_assoc();
     <title>Editar cliente</title>
 </head>
 <body>
-<div class="container">
-        <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="../pages/lista_chamados.php">Chamados</a></li>
-                <li><a href="../pages/lista_clientes.php">Clientes</a></li>
-                <li id="logout"><a href="../pages/logout.php">Logout</a></li>
-            </ul>
-        </nav>
-        <form action="../actions/atualiza_cliente.php" method="post">
-        <div>
+<div class="container_cadastro_chamados">
+      <nav>
+          <ul>
+              <li><a href="../index.php">Dashboard</a></li>
+              <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+              <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+              <li id="logout"><a href="../pages/logout.php">Logout</a></li>
+          </ul>
+      </nav>
+      <main class="main_chamados">
+        <form class="formulario" action="../actions/atualiza_cliente.php" method="post">
             <input type="hidden" name="id_cliente" value="<?php echo $dados['id_cliente']; ?>">
-        </div>
-        <div>
             <label for="">Nome Cliente</label>
             <input type="text" name="nome_cliente" value="<?php echo $dados['nome_cliente']; ?>">
-        </div>
-        <div>
             <label for="">Email</label>
             <input type="email" name="email" value="<?php echo $dados['email']; ?>">
-        </div>
-        <div>
             <label for="">Telefone</label>
             <input type="number" name="telefone" value="<?php echo $dados['telefone']; ?>">
-        </div>
-        <div>
             <label for="">Cidade</label>
             <input id="pesquisa_cidade" type="text" name="localidade" value="<?php echo $dados['nome_cidade']; ?>">
-        </div>
-        <div>
             <label for="">Endereço</label>
             <input type="text" name="endereco" value="<?php echo $dados['endereco']; ?>">
-        </div>
-        <div>
             <button type="submit">Salvar</button>
-        </div>
-    </form>
-        <a href="../pages/lista_clientes.php"><button>Cancelar</button></a>
+            <a href="../pages/lista_clientes.php"><button>Cancelar</button></a>
+        </form>
+        </main>
         <footer>Versão: 1.0.0</footer>
 </body>
 </html>

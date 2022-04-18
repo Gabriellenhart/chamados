@@ -1,7 +1,7 @@
 <?php
-include "../funcoes/functions.php";
+  include "../funcoes/functions.php";
 
-verificaSessao();
+ verificaSessao();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,51 +13,37 @@ verificaSessao();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../funcoes/buscacliente.js"></script>
     <script src="../funcoes/busca_cidade.js"></script>
-    <title>Document</title>
+    <title>Cadastro de chamado</title>
 </head>
 <body>
-<div class="container_clientes">
-  <div class="container">
-        <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="../pages/lista_chamados.php">Chamados</a></li>
-                <li><a href="../pages/lista_clientes.php">Clientes</a></li>
-                <li id="logout"><a href="../pages/logout.php">Logout</a></li>
-            </ul>
-        </nav>
-        <div class="title_clientes">
-            <h3>Cadastro de cliente</h3>
-        </div>
-        <main class="main_clientes">
-            <form class="container_form_cliente" action="../actions/cria_cliente.php" method="POST">
-                <div  class="input_nome">
-                    <label for="">Nome Cliente</label>
-                    <input type="text" name="nome_cliente">
-                </div>
-                <div  class="input_nome">
-                    <label for="">Email</label>
-                    <input type="email" name="email">
-                </div>
-                <div  class="form_cliente">
-                    <label for="">Telefone</label>
-                    <input type="number" name="telefone">
-                </div>
-                <div  class="form_cliente">
-                    <label for="">Cidade</label>
-                    <input id="pesquisa_cidade" type="text" name="tbl_cidade">
-                </div>
-                <div  class="form_cliente">
-                    <label for="">Endereço</label>
-                    <input type="text" name="endereco">
-                </div>
-                <div>
-                    <button type="submit">Salvar</button>
-                    <a href="/pages/lista_clientes.php"><button>Cancelar</button></a>
-                </div>
+  <div class="container_cadastro_chamados">
+      <nav>
+          <ul>
+              <li><a href="../index.php">Dashboard</a></li>
+              <li><a href="../pages/lista_chamados.php">Chamados</a></li>
+              <li><a href="../pages/lista_clientes.php">Clientes</a></li>
+              <li id="logout"><a href="../pages/logout.php">Logout</a></li>
+          </ul>
+      </nav>
+	  <main class="main_chamados">
+            <form class="formulario" action="../actions/cria_cliente.php" method="POST">
+                <label for="">Nome</label>
+                <input type="text" name="nome_cliente">
+				<label for="">Email</label>
+                <input type="mail" name="email">
+                <label for="">Localidade</label>
+                <input id="pesquisa_cidade" type="text" name="tbl_cidade">
+                <label for="">Telefone</label>
+                <input type="fone" name="telefone">
+                <label for="">Endereço</label>
+                <input type="text" name="endereco">
+                <a><button type="submit">Salvar</button></a>
+				<a href="/pages/lista_chamados.php"><button>Cancelar</button></a>
             </form>
         </main>
-    <footer>Versão: 1.0.0</footer>
+        <footer>Versão: 1.0.0</footer>
+    <div>
 </body>
 </html>

@@ -18,8 +18,7 @@
     <title>Cadastro de chamado</title>
 </head>
 <body>
-<div class="container_chamados">
-  <div class="container">
+  <div class="container_cadastro_chamados">
       <nav>
           <ul>
               <li><a href="../index.php">Dashboard</a></li>
@@ -28,47 +27,36 @@
               <li id="logout"><a href="../pages/logout.php">Logout</a></li>
           </ul>
       </nav>
-    <form action="../actions/cria_chamado.php" method="POST">
-    <div class="">
-                    <label for="">Cliente</label>
-                    <input id="pesquisa_cliente" type="text" name="nome_cliente">
-                </div>
-                <div class="">
-                    <label for="">Localidade</label>
-                    <input id="pesquisa_cidade" type="text" name="localidade">
-                </div>
-                <div class="">
-                    <label for="">Data de abertura</label>
-                    <input type="date" name="data_abertura" id="">
-                </div>
-                <div class="">
-                    <label for="">Prioridade</label>
-                    <select name="prioridade" id="">
-                        <option value="ALTA">Alta</option>
-                        <option value="MEDIA">Media</option>
-                        <option value="BAIXA">Baixxa</option>
-                    </select>
-                </div>
-                <div class="">
-                    <label for="">Status</label>
-                    <select name="status" id="">
-                        <option value="PENDENTE">Pendente</option>
-                        <option value="RESOLVENDO">Resolvendo</option>
-                        <option value="PAUSADO">Pausado</option>
-                        <option value="RESOLVENDO">Resolvido</option>
-                    </select>
-                </div>
-                <div class="">
-                    <label for="">Assunto</label>
-                    <input type="text" name="assunto" id="">
-                </div>
-                <div class=" textarea">
-                    <label for="">Descricao</label>
-                    <textarea name="descricao"></textarea>
-                </div>
-        <button type="submit">Salvar</button>
-        <a href="/pages/lista_chamados.php"><button>Cancelar</button></a>
-    </form>
-    <footer>Versão: 1.0.0</footer>
+	  <main class="main_chamados">
+            <form class="formulario" action="../actions/cria_chamado.php" method="POST">
+                <label for="">Cliente</label>
+                <input id="pesquisa_cliente" type="text" name="nome_cliente">
+                <label for="">Localidade</label>
+                <input id="pesquisa_cidade" type="text" name="localidade">
+                <label for="">Data abertura</label>
+                <input type="date" name="data_abertura">
+                <label for="">Prioridade</label>
+                <select id="" name="prioridade">
+                    <option value="">ALTA</option>
+                    <option value="">MÉDIA</option>
+                    <option value="">BAIXA</option>
+                </select>
+                <label for="">Status</label>
+                <select id="" name="status">
+                    <option value="">ABERTO</option>
+                    <option value="">RESOLVENDO</option>
+                    <option value="">PAUSADO</option>
+                    <option value="">RESOLVIDO</option>
+                </select>
+                <label for="">Assunto</label>
+                <input type="text" name="assunto">
+                <label for="">Descrição</label>
+                <textarea id="" cols="30" rows="10" name="descricao"></textarea>
+                <a><button type="submit">Salvar</button></a>
+				<a href="/pages/lista_chamados.php"><button>Cancelar</button></a>
+            </form>
+        </main>
+        <footer>Versão: 1.0.0</footer>
+    <div>
 </body>
 </html>
